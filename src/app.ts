@@ -23,7 +23,7 @@ const swaggerDefinition = {
   servers: [
     {
       url: process.env.SERVER,
-      description: 'Local server',
+      description: process.env.SERVER_DESCRIPTION,
     },
   ],
   components: {

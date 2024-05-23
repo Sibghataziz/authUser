@@ -39,3 +39,5 @@ export enum AUTH_PROVIDERS {
   GITHUB = 'github',
   CUSTOM = "custom",
 }
+
+export const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;

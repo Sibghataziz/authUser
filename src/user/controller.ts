@@ -5,6 +5,7 @@ import {
   IToggleIsAdmin,
   IUser,
   IUserRequest,
+  emailPattern,
 } from "./model/constant";
 import UserUtils from "./util";
 import UserDbs from "./model/dbs";
@@ -12,8 +13,8 @@ import UserDbs from "./model/dbs";
 async function registerUser(req: any, res: any) {
   try {
     const requestBody: IUserRequest = req.body;
-    if (isEmpty(requestBody.email)) {
-      throw Error("email is required!!");
+    if (isEmpty(requestBody.email) || !requestBody.email.match(emailPattern)) {
+      throw Error("invalid email!!");
     }
     if (isEmpty(requestBody.password) || isEmpty(requestBody.confirmPassword)) {
       throw Error("password and confirmPassword is required!!");
